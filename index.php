@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="login">
+        <a href="admin.php">Admin Page</a>
+    </div>
     <div class="wrapper">
         <h2>Products:</h2>
         <div class="grid">

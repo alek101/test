@@ -52,3 +52,11 @@
     font-size: 1.1em;
     font-weight: bold;
 }
+
+.login
+{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}
