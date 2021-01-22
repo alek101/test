@@ -6,15 +6,14 @@ class Model
 
     function __construct(){
         $host = 'localhost';  $db = 'test_citrus';
-        $user = 'root';   $pass = '';
+        $user = 'root';   $pass = ''; $port=3306;
         $charset = 'utf8';
-        $dsn = "mysql:host=$host;port=3306;dbname=$db;charset=$charset";
+        $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
         $options = array(
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
         );
         try{
             $this->conn = new PDO($dsn,$user,$pass,$options);
-            // echo "Connected!";
         }catch(PDOException $e){
             echo "Connection wasn't established: ".$e->getMessage();
         }
