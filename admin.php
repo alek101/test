@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="login">
+        <a href="index.php">Back</a>
+    </div>
     <div class="wrapper">
         <h2>Comments that are waiting for approvement:</h2>
         <?php
@@ -49,7 +52,6 @@
                 <?php
             }
         ?>
-        <a href="index.php">Back</a>
     </div>
     
 </body>
