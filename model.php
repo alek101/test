@@ -33,9 +33,23 @@ class Model
         $sql='SELECT * FROM `products`';
         return $this->selectPrepare($sql);
     }
+
+    public function getComments($isApproved=1)
+    {
+        $sql='SELECT * FROM `comments` WHERE `isApproved`= ?';
+        return $this->selectPrepare($sql, [$isApproved]);
+    }
+
+    public function postComment($email,$name,$comment)
+    {
+        $sql='INSERT INTO `comments` (`email`, `name`, `comment`, `isApproved`) VALUES (?, ?, ?, 0)';
+        $this->selectPrepare($sql,[$email,$name,$comment]);
+    }
 }
 
 $model=new Model();
-var_dump($model->getProducts());
+// var_dump($model->getProducts());
+var_dump($model->getComments());
+// $model->postComment("nesto@gmail.com","nekoi","komentar");
 
 ?>
