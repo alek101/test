@@ -5,7 +5,7 @@ class Model
     private $conn;
 
     function __construct(){
-        $host = 'localhost';  $db = 'baza_rentcar_v3';
+        $host = 'localhost';  $db = 'citrus_test';
         $user = 'root';   $pass = '';
         $charset = 'utf8';
         $dsn = "mysql:host=$host;port=3306;dbname=$db;charset=$charset";
@@ -14,9 +14,9 @@ class Model
         );
         try{
             $this->conn = new PDO($dsn,$user,$pass,$options);
-            // echo "Konektovan!";
+            // echo "Connected!";
         }catch(PDOException $e){
-            echo "JOK: ".$e->getMessage();
+            echo "Connection wasn't established: ".$e->getMessage();
         }
     }
     
