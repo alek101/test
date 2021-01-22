@@ -55,7 +55,7 @@
     </div>
     <div class="wrapper">
         <h3>Post New Comment</h3>
-        <form class="new_comment_form" action="createComment.php" method="POST">
+        <form class="new_comment_form">
             <p>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -72,9 +72,29 @@
                 placeholder="Post your's comment here" required></textarea>  
             </p>
             
-            <button type="submit">Post Comment</button>
+            <button type="submit" id="postCommentButton">Post Comment</button>
         </form>
     </div>
+
+    <script>
+        const postButton=document.querySelector('#postCommentButton');
+        const url='createComment.php';
+
+        postButton.addEventListener('click',(e)=>{
+            e.preventDefault();
+            const name=document.querySelector('#name').value;
+            const email=document.querySelector('#email').value;
+            const comment=document.querySelector('#comment').value;
+            fetch(url,{
+                method: 'POST',
+                ContentType: 'application/x-www-form-urlencoded',
+                body: {name, email, comment}
+            })
+            .then(res=>res.text())
+            .then(res=>console.log(res))
+            .catch(err=>console.log(err));
+        })
+    </script>
 </body>
 </html>
 

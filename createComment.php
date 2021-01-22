@@ -9,8 +9,11 @@
         $email=$_POST['email'];
         $comment=$_POST['comment'];
         $controller->postComment($email,$name,$comment);
-        header('/');
-        die();
+        file_get_contents('index.php');
+    }
+    else
+    {
+        echo "Error";
     }
 
 
