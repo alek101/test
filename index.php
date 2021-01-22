@@ -53,7 +53,28 @@
             }
         ?>
     </div>
-    
+    <div class="wrapper">
+        <h3>Post New Comment</h3>
+        <form class="new_comment_form" action="">
+            <p>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+            <!-- <p>
+               <label for="comment">Comment</label> 
+            </p> -->
+            <p>
+                <textarea type="text" id="comment" name="comment" 
+                placeholder="Post your's comment here" required></textarea>  
+            </p>
+            
+            <button type="submit">Post Comment</button>
+        </form>
+    </div>
 </body>
 </html>
 

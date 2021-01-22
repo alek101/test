@@ -34,3 +34,9 @@
     font-size: 1.2em;
     font-weight: bold;
 }
+
+.new_comment_form textarea
+{
+    width: 1000px;
+    height: 300px;
+}
