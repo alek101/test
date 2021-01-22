@@ -1,6 +1,5 @@
 <?php 
     require_once 'controller.php';
-    // var_dump($controller->getProducts());
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +12,7 @@
 </head>
 <body>
     <div class="wrapper">
+        <h2>Products:</h2>
         <div class="grid">
             <?php
                 $products=$controller->getProducts();
@@ -29,6 +29,29 @@
                 }
             ?>
         </div>
+    </div>
+    <div class="wrapper">
+        <h2>Comments:</h2>
+        <?php
+            $comments=$controller->getComments();
+            foreach($comments as $comment)
+            {
+                ?>
+                    <div class="comment">
+                        <p class="comment-name">
+                            <?php
+                                echo $comment['name']
+                            ?>
+                        </p>
+                        <p class="comment-body">
+                            <?php
+                                echo $comment['comment']
+                            ?>
+                        </p>
+                    </div>
+                <?php
+            }
+        ?>
     </div>
     
 </body>

@@ -14,6 +14,11 @@
         {
             return $this->model->getProducts();
         }
+
+        public function getComments()
+        {
+            return $this->model->getComments();
+        }
     }
 
 
