@@ -1,6 +1,7 @@
 <?php 
     require_once 'controller.php';
-    if(isset($_GET["id"]) and $_GET['method']=='PUT') echo json_encode($_GET["id"]);
+    if(isset($_GET["id"]) and $_GET['method']=='PUT') $controller->approveComment($_GET["id"]);
+    if(isset($_GET["id"]) and $_GET['method']=="DELETE") $controller->deleteComment($_GET["id"]);
 
 ?>
 
@@ -31,11 +32,19 @@
                                 echo $comment['comment']
                             ?>
                         </p>
-                        <form action="admin.php?" method="GET">
-                            <input type="text" name="id" hidden value="<?=$comment['id']?>">
-                            <input type="text" name="method" hidden value="PUT">
-                            <button type="submit">Approve</button>
-                        </form>
+                        <div class="admin-forms">
+                            <form action="admin.php?" method="GET">
+                                <input type="text" name="id" hidden value="<?=$comment['id']?>">
+                                <input type="text" name="method" hidden value="PUT">
+                                <button type="submit">Approve</button>
+                            </form>
+                            <form action="admin.php?" method="GET">
+                                <input type="text" name="id" hidden value="<?=$comment['id']?>">
+                                <input type="text" name="method" hidden value="DELETE">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
+                        
                     </div>
                 <?php
             }

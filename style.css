@@ -40,3 +40,8 @@
     width: 1000px;
     height: 300px;
 }
+
+.admin-forms
+{
+    display: flex;
+}

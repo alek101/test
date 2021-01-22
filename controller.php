@@ -24,6 +24,16 @@
         {
             $this->model->postComment($email,$name,$comment);
         }
+
+        public function approveComment($id)
+        {
+            $this->model->approveComment($id);
+        }
+
+        public function deleteComment($id)
+        {
+            $this->model->deleteComment($id);
+        }
     }
 
 

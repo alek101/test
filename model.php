@@ -43,13 +43,13 @@ class Model
     public function postComment($email,$name,$comment)
     {
         $sql='INSERT INTO `comments` (`email`, `name`, `comment`, `isApproved`) 
-        VALUES (?, ?, ?, 1)';
+        VALUES (?, ?, ?, 0)';
         $this->selectPrepare($sql,[$email,$name,$comment]);
     }
 
     public function approveComment($id)
     {
-        $sql='UPDATE `comments` SET `isApproved`=0 WHERE `id`=?';
+        $sql='UPDATE `comments` SET `isApproved`= 1 WHERE `id`=?';
         $this->selectPrepare($sql,[$id]);
     }
 
