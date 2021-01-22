@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 .wrapper
 {
     width: 1200px;
@@ -14,15 +16,21 @@
 
 .item
 {
-    width: 400px;
+    width: 380px;
     height: 500px;
     margin: 10px;
     padding: 10px;
+    transition: all 0.3s;
+}
+
+.item:hover
+{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product_image
 {
-    width: 380px;
+    width: 350px;
     height: 300px;
 }
 
@@ -75,4 +83,58 @@
     width: 70px;
     height: 40px;
     background-color: white;
+    border-radius: 3px;
+    transition: all 0.5s;
 }
+
+.loginButton:hover
+{
+    background-color: rgba(128, 128, 128, 0.2);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+label
+{
+    padding-right: 5px;
+}
+
+.comment
+{
+    margin: 0px 0px 40px 10px;
+    width: 80%;
+}
+
+.comment-name
+{
+    font-weight: bold;
+}
+
+.comment-body
+{
+    border: 1px solid rgba(114, 112, 112, 0.205);
+    padding: 5px;
+}
+
+.action-button
+{
+    background-color: rgba(255, 0, 0, 0.432);
+    border: 1px solid red;
+    padding: 10px;
+    margin-right: 5px;
+    transition: all 0.5s;
+}
+
+.action-button:hover
+{
+    background-color: white;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+input:hover,textarea:hover
+{
+    border-color: red;
+}
+
+

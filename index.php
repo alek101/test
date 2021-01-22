@@ -113,7 +113,7 @@
                 placeholder="Post your's comment here" required></textarea>  
             </p>
             
-            <button type="submit" id="postCommentButton">Post Comment</button>
+            <button type="submit" id="postCommentButton" class="action-button">Post Comment</button>
         </form>
     </div>
 

@@ -42,12 +42,12 @@
                             <form action="admin.php" method="POST">
                                 <input type="text" name="id" hidden value="<?=$comment['id']?>">
                                 <input type="text" name="method" hidden value="PUT">
-                                <button type="submit">Approve</button>
+                                <button type="submit" class="action-button">Approve</button>
                             </form>
                             <form action="admin.php" method="POST">
                                 <input type="text" name="id" hidden value="<?=$comment['id']?>">
                                 <input type="text" name="method" hidden value="DELETE">
-                                <button type="submit">Delete</button>
+                                <button type="submit" class="action-button">Delete</button>
                             </form>
                         </div>
                         
