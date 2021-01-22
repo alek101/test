@@ -9,12 +9,17 @@
         {
             $this->model=new Model();
         }
+
+        public function getProducts()
+        {
+            return $this->model->getProducts();
+        }
     }
 
 
     $controller=new Controller();
 
-    var_dump($controller->model->getProducts());
+    // var_dump($controller->getProducts());
 
 
 

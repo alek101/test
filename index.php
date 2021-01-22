@@ -1,3 +1,8 @@
+<?php 
+    require_once 'controller.php';
+    // var_dump($controller->getProducts());
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +13,19 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="item">
-            
-        </div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+        <?php
+            $products=$controller->getProducts();
+
+            foreach($products as $product)
+            {
+                ?>
+                  <div class="item"></div>  
+                <?php
+            }
+        ?>
+        
     </div>
 </body>
 </html>
+
+
