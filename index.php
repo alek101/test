@@ -87,7 +87,7 @@
     <div class="wrapper">
         <h3>Post New Comment</h3>
         <p id="message"></p>
-        <form class="new_comment_form">
+        <form class="new_comment_form" method='post' action="">
             <p>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -104,41 +104,6 @@
             <button type="submit" id="postCommentButton" class="action-button">Post Comment</button>
         </form>
     </div>
-
-    <script>
-        const name=document.querySelector('#name');
-        const email=document.querySelector('#email');
-        const comment=document.querySelector('#comment');
-        document.querySelector('#postCommentButton').addEventListener('click',(e)=>{
-            e.preventDefault();
-            const url='createComment.php';
-            const parametars=new URLSearchParams();
-            parametars.append('name',name.value);
-            parametars.append('email',email.value);
-            parametars.append('comment',comment.value);
-            fetch(url,
-            {
-                method: 'POST',
-                ContentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                body: parametars
-            })
-            .then(res=>res.json())
-            .then(res=>{
-                if(res=="Added comment")
-                {
-                    document.querySelector('#message').innerHTML="Your's comment waits for approvement!";
-                    name.value="";
-                    email.value="";
-                    comment.value=null;
-                }
-                if(res=="Error")
-                {
-                    alert("Comment wasn't added!");
-                }
-            })
-            .catch(err=>console.log(err));
-        })
-    </script>
 </body>
 </html>
 
