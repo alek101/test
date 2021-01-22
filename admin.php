@@ -1,6 +1,7 @@
 <?php 
     require_once 'controller.php';
-    if(isset($_GET["id"]) and ) echo json_encode($_GET["id"]);
+    if(isset($_PUT["id"]) and $_SERVER['REQUEST_METHOD']==='PUT') echo json_encode($_PUT["id"]);
+    echo json_encode($_SERVER['REQUEST_METHOD']);
 
 ?>
 
@@ -31,7 +32,7 @@
                                 echo $comment['comment']
                             ?>
                         </p>
-                        <form action="admin.php?" method="GET">
+                        <form action="admin.php?" method="PUT">
                             <input type="text" name="id" hidden value="<?=$comment['id']?>">
                             <button type="submit">Approve</button>
                         </form>
