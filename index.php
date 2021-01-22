@@ -64,9 +64,6 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </p>
-            <!-- <p>
-               <label for="comment">Comment</label> 
-            </p> -->
             <p>
                 <textarea type="text" id="comment" name="comment" 
                 placeholder="Post your's comment here" required></textarea>  
@@ -84,13 +81,23 @@
             parametars.append('name',document.querySelector('#name').value);
             parametars.append('email',document.querySelector('#email').value);
             parametars.append('comment',document.querySelector('#comment').value);
-            fetch(url,{
+            fetch(url,
+            {
                 method: 'POST',
                 ContentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 body: parametars
             })
             .then(res=>res.json())
-            .then(res=>console.log(res))
+            .then(res=>{
+                if(res=="Added comment")
+                {
+                    location.reload();
+                }
+                if(res=="Error")
+                {
+                    alert("Comment wasn't added!");
+                }
+            })
             .catch(err=>console.log(err));
         })
     </script>
