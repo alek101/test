@@ -1,13 +1,14 @@
 <?php
     require_once 'model.php';
+    require_once 'env.php';
 
     class Controller
     {
         private $model;
 
-        function __construct()
+        function __construct($host,$dbName,$dbUsername,$dbPassword,$dbPort,$charset)
         {
-            $this->model=new Model();
+            $this->model=new Model($host,$dbName,$dbUsername,$dbPassword,$dbPort,$charset);
         }
 
         public function getProducts()
@@ -41,7 +42,7 @@
         }
     }
 
-    $controller=new Controller();
+    $controller=new Controller($host,$dbName,$dbUsername,$dbPassword,$dbPort,$charset);
 
 
 
