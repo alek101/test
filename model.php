@@ -45,11 +45,18 @@ class Model
         $sql='INSERT INTO `comments` (`email`, `name`, `comment`, `isApproved`) VALUES (?, ?, ?, 0)';
         $this->selectPrepare($sql,[$email,$name,$comment]);
     }
+
+    public function approveComment($id)
+    {
+        $sql='UPDATE `comments` SET `isApproved`=1 WHERE `id`=?';
+        $this->selectPrepare($sql,[$id]);
+    }
 }
 
 $model=new Model();
 // var_dump($model->getProducts());
-var_dump($model->getComments());
+// var_dump($model->getComments());
 // $model->postComment("nesto@gmail.com","nekoi","komentar");
+$model->approveComment(3);
 
 ?>
