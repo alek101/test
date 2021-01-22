@@ -43,7 +43,7 @@ class Model
     public function postComment($email,$name,$comment)
     {
         $sql='INSERT INTO `comments` (`email`, `name`, `comment`, `isApproved`) 
-        VALUES (?, ?, ?, 0)';
+        VALUES (?, ?, ?, 1)';
         $this->selectPrepare($sql,[$email,$name,$comment]);
     }
 
@@ -66,5 +66,3 @@ class Model
 // $model->postComment("nesto@gmail.com","nekoi","komentar");
 // $model->approveComment(3);
 // $model->deleteComment(3);
-
-?>

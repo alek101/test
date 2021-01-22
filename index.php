@@ -55,7 +55,7 @@
     </div>
     <div class="wrapper">
         <h3>Post New Comment</h3>
-        <form class="new_comment_form" action="">
+        <form class="new_comment_form" action="createComment.php" method="POST">
             <p>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>

@@ -3,7 +3,7 @@
 
     class Controller
     {
-        public $model;
+        private $model;
 
         function __construct()
         {
@@ -18,6 +18,11 @@
         public function getComments()
         {
             return $this->model->getComments();
+        }
+
+        public function postComment($email,$name,$comment)
+        {
+            $this->model->postComment($email,$name,$comment);
         }
     }
 
@@ -45,6 +50,3 @@
 
 
 
-
-
-?>
