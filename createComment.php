@@ -9,11 +9,11 @@
         $email=$_POST['email'];
         $comment=$_POST['comment'];
         $controller->postComment($email,$name,$comment);
-        file_get_contents('index.php');
+        return json_encode('Added comment');
     }
     else
     {
-        echo "Error";
+        return json_encode("Error");
     }
 
 

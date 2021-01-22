@@ -77,20 +77,19 @@
     </div>
 
     <script>
-        const postButton=document.querySelector('#postCommentButton');
-        const url='createComment.php';
-
-        postButton.addEventListener('click',(e)=>{
+        document.querySelector('#postCommentButton').addEventListener('click',(e)=>{
             e.preventDefault();
-            const name=document.querySelector('#name').value;
-            const email=document.querySelector('#email').value;
-            const comment=document.querySelector('#comment').value;
+            const url='createComment.php';
+            const parametars=new URLSearchParams();
+            parametars.append('name',document.querySelector('#name').value);
+            parametars.append('email',document.querySelector('#email').value);
+            parametars.append('comment',document.querySelector('#comment').value);
             fetch(url,{
                 method: 'POST',
-                ContentType: 'application/x-www-form-urlencoded',
-                body: {name, email, comment}
+                ContentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                body: parametars
             })
-            .then(res=>res.text())
+            .then(res=>res.json())
             .then(res=>console.log(res))
             .catch(err=>console.log(err));
         })
