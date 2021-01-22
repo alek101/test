@@ -85,7 +85,6 @@
     </div>
     <div class="wrapper">
         <h3>Post New Comment</h3>
-        <p id="message"></p>
         <form class="new_comment_form" method='post' action="">
             <p>
                 <label for="name">Name</label>

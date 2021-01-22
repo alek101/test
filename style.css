@@ -5,15 +5,12 @@
     width: 1200px;
     margin: 10px auto;
 }
-
 .grid
 {
     display: grid;
     grid-template-columns: repeat(3, 400px);
-    grid-template-rows: repeat(3, 500px);
-    
+    grid-template-rows: repeat(3, 500px); 
 }
-
 .item
 {
     width: 380px;
@@ -22,18 +19,15 @@
     padding: 10px;
     transition: all 0.3s;
 }
-
 .item:hover
 {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .product_image
 {
     width: 350px;
     height: 300px;
 }
-
 .title
 {
     text-align: center;
@@ -42,25 +36,15 @@
     font-size: 1.2em;
     font-weight: bold;
 }
-
 .new_comment_form textarea
 {
     width: 1000px;
     height: 300px;
 }
-
 .admin-forms
 {
     display: flex;
 }
-
-#message
-{
-    color: red;
-    font-size: 1.1em;
-    font-weight: bold;
-}
-
 .login
 {
     width: 100%;
@@ -68,14 +52,12 @@
     justify-content: flex-end;
     align-items: center;
 }
-
 .flex-row
 {
     display: flex;
     justify-content: flex-end;
     margin-left: 15px;
 }
-
 .loginButton
 {
     margin-left: 15px;
@@ -86,36 +68,30 @@
     border-radius: 3px;
     transition: all 0.5s;
 }
-
 .loginButton:hover
 {
     background-color: rgba(128, 128, 128, 0.2);
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
-
 label
 {
     padding-right: 5px;
 }
-
 .comment
 {
     margin: 0px 0px 40px 10px;
     width: 80%;
 }
-
 .comment-name
 {
     font-weight: bold;
 }
-
 .comment-body
 {
     border: 1px solid rgba(114, 112, 112, 0.205);
     padding: 5px;
 }
-
 .action-button
 {
     background-color: rgba(255, 0, 0, 0.432);
@@ -124,14 +100,12 @@ label
     margin-right: 5px;
     transition: all 0.5s;
 }
-
 .action-button:hover
 {
     background-color: white;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
-
 input:hover,textarea:hover
 {
     border-color: red;
