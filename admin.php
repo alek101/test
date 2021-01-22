@@ -4,8 +4,8 @@
     if(isset($_POST["id"]) and $_POST['method']=="DELETE") $controller->deleteComment($_POST["id"]);
 
     session_start();
-    if(!isset($_SESSION['isAuth'])) die();
-    if(!$_SESSION['isAuth']) die();
+    if(!isset($_SESSION['isAuth'])) exit('You are not authorized!');
+    if(!$_SESSION['isAuth']) exit('You are not authorized!');
 ?>
 
 <!DOCTYPE html>

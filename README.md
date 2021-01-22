@@ -9,3 +9,4 @@
  2. Download files from github, into htdocs
  3. Import sql file, test_citrus
  4. Run index.php in your's browser
+ 5. Admin credentials are: username: admin password: Admin1234
