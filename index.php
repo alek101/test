@@ -13,18 +13,24 @@
 </head>
 <body>
     <div class="wrapper">
-        <?php
-            $products=$controller->getProducts();
-
-            foreach($products as $product)
-            {
-                ?>
-                  <div class="item"></div>  
-                <?php
-            }
-        ?>
-        
+        <div class="grid">
+            <?php
+                $products=$controller->getProducts();
+                foreach($products as $product)
+                {
+                    ?>
+                    <div class="item">
+                        <p class="title"><?php echo $product['title'] ?></p>
+                        <img src="<?php echo $product['image'] ?>" 
+                        alt="<?php echo $product['title'] ?>. image" class="product_image">
+                        <p class="description"><?php echo $product['description'] ?></p>
+                    </div>  
+                    <?php
+                }
+            ?>
+        </div>
     </div>
+    
 </body>
 </html>
 
