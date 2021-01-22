@@ -70,7 +70,7 @@
                     <div class="comment">
                         <p class="comment-name">
                             <?php
-                                echo $comment['name']
+                                echo $comment['name']." says:"
                             ?>
                         </p>
                         <p class="comment-body">
