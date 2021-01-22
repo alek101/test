@@ -62,10 +62,10 @@ class Model
     public function checkCredentials($username,$password)
     {
         $sql='SELECT * FROM `admins` WHERE `username`= ?';
-        $result=$this->selectPrepare($sql,[$username])[0];
-        if(isset($result['username']))
+        $result=$this->selectPrepare($sql,[$username]);
+        if(isset($result[0]['username']))
         {
-            if($result['password']===hash("sha384",$password)) return true;
+            if($result[0]['password']===hash("sha384",$password)) return true;
         }
         return false;
     }
