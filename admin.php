@@ -3,6 +3,9 @@
     if(isset($_POST["id"]) and $_POST['method']=='PUT') $controller->approveComment($_POST["id"]);
     if(isset($_POST["id"]) and $_POST['method']=="DELETE") $controller->deleteComment($_POST["id"]);
 
+    session_start();
+    if(!isset($_SESSION['isAuth'])) die();
+    if(!$_SESSION['isAuth']) die();
 ?>
 
 <!DOCTYPE html>
