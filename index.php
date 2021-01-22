@@ -55,6 +55,7 @@
     </div>
     <div class="wrapper">
         <h3>Post New Comment</h3>
+        <p id="message"></p>
         <form class="new_comment_form">
             <p>
                 <label for="name">Name</label>
@@ -74,13 +75,16 @@
     </div>
 
     <script>
+        const name=document.querySelector('#name');
+        const email=document.querySelector('#email');
+        const comment=document.querySelector('#comment');
         document.querySelector('#postCommentButton').addEventListener('click',(e)=>{
             e.preventDefault();
             const url='createComment.php';
             const parametars=new URLSearchParams();
-            parametars.append('name',document.querySelector('#name').value);
-            parametars.append('email',document.querySelector('#email').value);
-            parametars.append('comment',document.querySelector('#comment').value);
+            parametars.append('name',name.value);
+            parametars.append('email',email.value);
+            parametars.append('comment',comment.value);
             fetch(url,
             {
                 method: 'POST',
@@ -91,7 +95,10 @@
             .then(res=>{
                 if(res=="Added comment")
                 {
-                    location.reload();
+                    document.querySelector('#message').innerHTML="Your's comment waits for approvement!";
+                    name.value="";
+                    email.value="";
+                    comment.value=null;
                 }
                 if(res=="Error")
                 {
