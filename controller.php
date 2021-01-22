@@ -34,6 +34,11 @@
         {
             $this->model->deleteComment($id);
         }
+
+        public function checkCredentials($username,$password)
+        {
+            return $this->model->checkCredentials($username,$password);
+        }
     }
 
 
