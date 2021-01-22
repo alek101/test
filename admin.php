@@ -1,7 +1,6 @@
 <?php 
     require_once 'adminController.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,8 +49,6 @@
             }
         ?>
     </div>
-
-    
 </body>
 </html>
 

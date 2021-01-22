@@ -20,12 +20,12 @@ class Model
         }
     }
     
-    function selectPrepare($sql, $niz_vr=[])
+    function selectPrepare($sql, $array_variables=[])
     {
         $stmt=$this->conn->prepare($sql);
-        $stmt->execute($niz_vr);
-        $niz=$stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $niz;
+        $stmt->execute($array_variables);
+        $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     public function getProducts()
@@ -70,11 +70,3 @@ class Model
         return false;
     }
 }
-
-// $model=new Model();
-// var_dump($model->getProducts());
-// var_dump($model->getComments());
-// $model->postComment("nesto@gmail.com","nekoi","komentar");
-// $model->approveComment(3);
-// $model->deleteComment(3);
-// var_dump($model->checkCredentials('admin','Admin1234'));

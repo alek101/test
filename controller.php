@@ -41,10 +41,8 @@
         }
     }
 
-
     $controller=new Controller();
 
-    // var_dump($controller->getProducts());
 
 
 

@@ -1,6 +1,6 @@
 <?php
 require_once 'controller.php';
-
+//Auth
 session_start();
 if(!isset($_SESSION['isAuth'])) $_SESSION['isAuth']=false;
 if(isset($_POST["username"]) and isset($_POST['password']))
@@ -14,7 +14,7 @@ if(isset($_POST['logout']))
 {
     $_SESSION['isAuth']=false;
 }
-
+//Posting new comments
 if(isset($_POST['name']) and trim($_POST['name']) !== '' 
 and isset($_POST['email']) and trim($_POST['email']) !==''
 and isset($_POST['comment']) and trim($_POST['comment']) !=='')
