@@ -49,7 +49,7 @@ class Model
 
     public function approveComment($id)
     {
-        $sql='UPDATE `comments` SET `isApproved`=1 WHERE `id`=?';
+        $sql='UPDATE `comments` SET `isApproved`=0 WHERE `id`=?';
         $this->selectPrepare($sql,[$id]);
     }
 

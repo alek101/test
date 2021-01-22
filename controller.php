@@ -15,9 +15,9 @@
             return $this->model->getProducts();
         }
 
-        public function getComments()
+        public function getComments($isApproved)
         {
-            return $this->model->getComments();
+            return $this->model->getComments($isApproved);
         }
 
         public function postComment($email,$name,$comment)
