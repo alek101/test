@@ -13,6 +13,17 @@
 <body>
     <div class="login">
         <a href="admin.php">Admin Page</a>
+        <form action="" method="post" class="flex-row">
+            <p class="flex-row">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </p>
+            <p class="flex-row">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </p>
+            <button type="submit" class="loginButton">Login</button>
+        </form>
     </div>
     <div class="wrapper">
         <h2>Products:</h2>

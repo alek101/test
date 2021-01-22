@@ -58,5 +58,21 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+}
 
+.flex-row
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 15px;
+}
+
+.loginButton
+{
+    margin-left: 15px;
+    margin-top: 8px;
+    width: 70px;
+    height: 40px;
+    background-color: white;
 }

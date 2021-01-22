@@ -58,6 +58,17 @@ class Model
         $sql='DELETE FROM `comments` WHERE `id`=?';
         $this->selectPrepare($sql,[$id]);
     }
+
+    public function checkCredentials($username,$password)
+    {
+        $sql='SELECT * FROM `admins` WHERE `username`= ?';
+        $result=$this->selectPrepare($sql,[$username])[0];
+        if(isset($result['username']))
+        {
+            if($result['password']===hash("sha384",$password)) return true;
+        }
+        return false;
+    }
 }
 
 // $model=new Model();
@@ -66,3 +77,4 @@ class Model
 // $model->postComment("nesto@gmail.com","nekoi","komentar");
 // $model->approveComment(3);
 // $model->deleteComment(3);
+// var_dump($model->checkCredentials('admin','Admin1234'));
