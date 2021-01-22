@@ -60,11 +60,11 @@ class Model
     }
 }
 
-$model=new Model();
+// $model=new Model();
 // var_dump($model->getProducts());
 // var_dump($model->getComments());
 // $model->postComment("nesto@gmail.com","nekoi","komentar");
 // $model->approveComment(3);
-$model->deleteComment(3);
+// $model->deleteComment(3);
 
 ?>
