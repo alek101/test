@@ -1,7 +1,7 @@
 <?php 
     require_once 'controller.php';
-    if(isset($_GET["id"]) and $_GET['method']=='PUT') $controller->approveComment($_GET["id"]);
-    if(isset($_GET["id"]) and $_GET['method']=="DELETE") $controller->deleteComment($_GET["id"]);
+    if(isset($_POST["id"]) and $_POST['method']=='PUT') $controller->approveComment($_POST["id"]);
+    if(isset($_POST["id"]) and $_POST['method']=="DELETE") $controller->deleteComment($_POST["id"]);
 
 ?>
 
@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <h2>Comments:</h2>
+        <h2>Comments that are waiting for approvement:</h2>
         <?php
             $comments=$controller->getComments("0");
             foreach($comments as $comment)
@@ -33,12 +33,12 @@
                             ?>
                         </p>
                         <div class="admin-forms">
-                            <form action="admin.php?" method="GET">
+                            <form action="admin.php" method="POST">
                                 <input type="text" name="id" hidden value="<?=$comment['id']?>">
                                 <input type="text" name="method" hidden value="PUT">
                                 <button type="submit">Approve</button>
                             </form>
-                            <form action="admin.php?" method="GET">
+                            <form action="admin.php" method="POST">
                                 <input type="text" name="id" hidden value="<?=$comment['id']?>">
                                 <input type="text" name="method" hidden value="DELETE">
                                 <button type="submit">Delete</button>
@@ -49,6 +49,7 @@
                 <?php
             }
         ?>
+        <a href="index.php">Back</a>
     </div>
     
 </body>

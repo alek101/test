@@ -15,7 +15,7 @@
             return $this->model->getProducts();
         }
 
-        public function getComments($isApproved)
+        public function getComments($isApproved=1)
         {
             return $this->model->getComments($isApproved);
         }
