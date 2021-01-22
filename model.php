@@ -42,7 +42,8 @@ class Model
 
     public function postComment($email,$name,$comment)
     {
-        $sql='INSERT INTO `comments` (`email`, `name`, `comment`, `isApproved`) VALUES (?, ?, ?, 0)';
+        $sql='INSERT INTO `comments` (`email`, `name`, `comment`, `isApproved`) 
+        VALUES (?, ?, ?, 0)';
         $this->selectPrepare($sql,[$email,$name,$comment]);
     }
 
@@ -51,12 +52,19 @@ class Model
         $sql='UPDATE `comments` SET `isApproved`=1 WHERE `id`=?';
         $this->selectPrepare($sql,[$id]);
     }
+
+    public function deleteComment($id)
+    {
+        $sql='DELETE FROM `comments` WHERE `id`=?';
+        $this->selectPrepare($sql,[$id]);
+    }
 }
 
 $model=new Model();
 // var_dump($model->getProducts());
 // var_dump($model->getComments());
 // $model->postComment("nesto@gmail.com","nekoi","komentar");
-$model->approveComment(3);
+// $model->approveComment(3);
+$model->deleteComment(3);
 
 ?>
