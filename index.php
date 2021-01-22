@@ -22,10 +22,18 @@
                     ) 
                     $_SESSION['isAuth']=true;
             } 
+            if(isset($_POST['logout']))
+            {
+                $_SESSION['isAuth']=false;
+            }
             if($_SESSION['isAuth'])
             {
                 ?>
                     <a href="admin.php">Admin Page</a>
+                    <form action="" method="post" class="flex-row">
+                        <input type="hidden" name="logout" value="true">
+                        <button type="submit" class="loginButton">Logout</button>
+                    </form>
                 <?php
             }
             else
